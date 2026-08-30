@@ -1,0 +1,28 @@
+name: liquid_glass_showcase
+description: "A polished iOS 26 Liquid Glass showcase - glass widgets layered over real imagery, built with the liquid_glass_widgets package."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Apple iOS 26 Liquid Glass UI kit (shader blur, jelly physics, dynamic
+  # lighting). https://pub.dev/packages/liquid_glass_widgets
+  liquid_glass_widgets: ^1.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/photos/
