@@ -4,9 +4,9 @@ A polished Flutter demo of Apple's **iOS 26 Liquid Glass** design language - fro
 
 ## Screenshots
 
-| Home | Glass hero card | Glass controls |
-|---|---|---|
-| ![Home](screenshots/01-home.png) | ![Hero](screenshots/02-hero.png) | ![Controls](screenshots/03-controls.png) |
+| Home | Controls & actions | Toggled state |
+|:---:|:---:|:---:|
+| ![Home](screenshots/01-home.png) | ![Controls and actions](screenshots/02-controls-actions.png) | ![Toggled controls](screenshots/03-controls.png) |
 
 ## What it shows
 
