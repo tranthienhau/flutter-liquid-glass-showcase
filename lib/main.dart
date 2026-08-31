@@ -30,10 +30,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _tab = 0;
-  bool _lighting = true;
-  bool _reduceMotion = false;
-  double _blur = 0.7;
+  // Deterministic capture states for the README screenshots, selected via
+  // --dart-define=SHOT=1|2|3. SHOT=0 (default) is the normal launch state.
+  static const _shot = int.fromEnvironment('SHOT');
+
+  late int _tab = const [0, 0, 2][_shot.clamp(0, 2)];
+  late bool _lighting = _shot != 2;
+  late bool _reduceMotion = _shot == 2;
+  late double _blur = _shot == 2 ? 0.35 : 0.7;
+
+  late final _scroll = ScrollController(
+    initialScrollOffset: const [0.0, 360.0, 250.0][_shot.clamp(0, 2)],
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         bottom: false,
         child: SingleChildScrollView(
+          controller: _scroll,
           padding: const EdgeInsets.fromLTRB(20, 12, 20, 140),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
